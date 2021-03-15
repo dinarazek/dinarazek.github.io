@@ -1,5 +1,5 @@
 html, body {
-    font-family: Nunito;
+    font-family: Nunito, sans-serif;
     font-style: normal;
     font-variant: normal;
     background-color: white;
@@ -45,6 +45,7 @@ a {
 h1 {
     font-weight: lighter;
     text-align: left;
+    display: inline;
 }
 
 h2 {
@@ -93,7 +94,6 @@ homepage {
     margin: auto;
     line-height: 10px;
     background-color: white;
-    grid-area: 3 / 1 / 4 / 4;
     font-weight: lighter;
     font-size:27px;
     justify-content: center;
@@ -117,4 +117,34 @@ homepage {
 .verticalLine {
     border-left: 2px solid #BDBDBD;
     height: 280px;
+}
+
+.viewOptions {
+    display: inline-block;
+    border: 1.5px solid black;
+    text-align: center;
+    padding: 2px 2px;
+    font-family: Nunito;
+    float: right;
+    margin-top: 30px;
+}
+
+#relaxed_button {
+    background-color: #D2ACAC;
+}
+
+browsepage {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin: auto;
+    line-height: 10px;
+    background-color: white;
+    font-weight: lighter;
+    font-size:27px;
+    justify-content: center;
+    justify-items: center;
+    align-items: stretch;
+    align-content: center;
 }
