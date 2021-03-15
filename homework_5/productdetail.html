@@ -2,9 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUN BUN BAKE SHOP</title>
+    <!-- access to different fonts-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
+    <!-- links CSS file -->
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="detail.css" type="text/css" rel="stylesheet">
 </head>
-<body>
 
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="base.html"><img id="logo" src="images/logo.png" alt="shop_logo" height="60px"></a></li>
+                <li class="nav_bar_options"><img src="images/cart-icon.svg" alt="cart_icon" height="26px"></li>
+                <li class="nav_bar_options">ABOUT</li>
+                <li class="nav_bar_options" id="selected_page"><a href="productbrowsing.html">SHOP ROLLS</a></li>
+                <li class="nav_bar_options"><a href="base.html">HOME</a></li>
+            </ul>
+            <br><br>
+        </nav>
+
+        <header>
+            <br>
+            <h1>SHOP ROLLS!</h1>
+            <button type="button" id="relaxed_button" class="view_options">RELAXED</button>
+            <button type="button" id="dense_button" class="view_options">DENSE</button>
+            <hr>
+        </header>
+
+        <div class="pumpkin-detail">
+            <a href="productbrowsing.html">
+                <img class="close_detail" src="images/red_x.png" alt="close_detail_page">
+            </a>
+            <br>
+            <main>
+                <div class="roll_label">BEST SELLER</div>
+                <div class="">
+                    <img class="large_roll_image" src="images/rolls-4.webp" alt="pumpkin-roll-image">
+                </div>
+                <div class="roll_images"></div>
+                <div class="roll_title">PUMPKIN SPICE</div>
+                <div>$6 <span class="price">PER ROLL</span></div>
+                <div class="description_title">DESCRIPTION</div>
+                <div class="description"></div>
+                <hr>
+                <div class="flavor_options"></div>
+                <div class="quantity_options"></div>
+
+
+            </main>
+        </div>
+<!--            </main>-->
+<!--            <h5>THE PUMPKIN SPICE</h5>-->
+<!--            <h4>$6 <span class="price">PER ROLL</span></h4>-->
+<!--            <label>FLAVOR</label>-->
+<!--            <br>-->
+<!--            <span class="selections">NONE</span>-->
+<!--            <label>QUANTITY</label>-->
+<!--            <br>-->
+<!--            <span class="selections">1</span>-->
+<!--            <button class="add_to_cart_button">ADD TO CART!</button>-->
+    </div>
 </body>
-</html>
