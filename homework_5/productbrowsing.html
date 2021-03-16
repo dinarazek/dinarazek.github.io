@@ -6,7 +6,7 @@
     <title>BUN BUN BAKE SHOP</title>
     <!-- access to different fonts-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
-    <!-- links CSS file -->
+    <!-- links CSS files -->
     <link href="style.css" type="text/css" rel="stylesheet">
     <link href="browse.css" type="text/css" rel="stylesheet">
 </head>
@@ -14,9 +14,11 @@
 <body>
     <div class="container">
         <nav>
+            <!-- navigation bar elements -->
             <ul>
-                <li><a href="base.html"><img id="logo" src="images/logo.png" alt="shop_logo" height="60px"></a></li>
-                <li class="nav_bar_options"><img src="images/cart-icon.svg" alt="cart_icon" height="26px"></li>
+                <li><a href="base.html"><img id="logo" src="images/logo.png" alt="shop_logo" height="60"></a></li>
+                <!-- in reverse order than seen on page due to float right property -->
+                <li class="nav_bar_options"><img src="images/cart-icon.svg" alt="cart_icon" height="26"></li>
                 <li class="nav_bar_options">ABOUT</li>
                 <li class="nav_bar_options" id="selected_page"><a href="productbrowsing.html">SHOP ROLLS</a></li>
                 <li class="nav_bar_options"><a href="base.html">HOME</a></li>
@@ -25,6 +27,7 @@
         </nav>
 
         <header>
+            <!-- header elements -->
             <br>
             <h1>SHOP ROLLS!</h1>
             <button type="button" id="relaxed_button" class="view_options">RELAXED</button>
@@ -33,6 +36,8 @@
         </header>
 
         <main>
+            <!-- utilizes a grid to place elements properly on the page -->
+            <!-- each div represents a different roll on the page -->
             <div class="roll blackberry">
                 <br>
                 <img class="single_roll_image" src="images/main-close.png" alt="blackberry_roll">

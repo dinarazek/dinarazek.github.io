@@ -6,7 +6,7 @@
     <title>BUN BUN BAKE SHOP</title>
     <!-- access to different fonts-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
-    <!-- links CSS file -->
+    <!-- links CSS files -->
     <link href="style.css" type="text/css" rel="stylesheet">
     <link href="detail.css" type="text/css" rel="stylesheet">
 </head>
@@ -14,9 +14,11 @@
 <body>
     <div class="container">
         <nav>
+            <!-- navigation bar elements -->
             <ul>
-                <li><a href="base.html"><img id="logo" src="images/logo.png" alt="shop_logo" height="60px"></a></li>
-                <li class="nav_bar_options"><img src="images/cart-icon.svg" alt="cart_icon" height="26px"></li>
+                <li><a href="base.html"><img id="logo" src="images/logo.png" alt="shop_logo" height="60"></a></li>
+                <!-- in reverse order than seen on page due to float right property -->
+                <li class="nav_bar_options"><img src="images/cart-icon.svg" alt="cart_icon" height="26"></li>
                 <li class="nav_bar_options">ABOUT</li>
                 <li class="nav_bar_options" id="selected_page"><a href="productbrowsing.html">SHOP ROLLS</a></li>
                 <li class="nav_bar_options"><a href="base.html">HOME</a></li>
@@ -25,6 +27,7 @@
         </nav>
 
         <header>
+            <!-- header elements -->
             <br>
             <h1>SHOP ROLLS!</h1>
             <button type="button" id="relaxed_button" class="view_options">RELAXED</button>
@@ -38,7 +41,8 @@
             </a>
             <br>
             <main>
-                <span class="roll_label">BEST SELLER</span>
+                <!-- utilizes a grid to place elements properly on the page -->
+                <div class="roll_label">BEST SELLER</div>
                 <img class="large_roll_image" src="images/rolls-4.png" alt="pumpkin-roll-image">
                 <div class="roll_images">
                     <img class="small_image_edit" src="images/rolls-3.png" alt="pumpkin-roll-image_2" height="100">
@@ -64,20 +68,10 @@
                     <button class="drop-down-options">1</button>
                 </div>
                 <button class="add_to_cart_button">
-                    <img src="images/cart-icon.svg" alt="cart-icon" height="16">
+                    <img src="images/cart-icon.svg" alt="cart-icon" height="30">
                     ADD TO CART!
                 </button>
             </main>
         </div>
-<!--            </main>-->
-<!--            <h5>THE PUMPKIN SPICE</h5>-->
-<!--            <h4>$6 <span class="price">PER ROLL</span></h4>-->
-<!--            <label>FLAVOR</label>-->
-<!--            <br>-->
-<!--            <span class="selections">NONE</span>-->
-<!--            <label>QUANTITY</label>-->
-<!--            <br>-->
-<!--            <span class="selections">1</span>-->
-<!--            <button class="add_to_cart_button">ADD TO CART!</button>-->
     </div>
 </body>
