@@ -9,6 +9,8 @@
     <!-- links CSS files -->
     <link href="style.css" type="text/css" rel="stylesheet">
     <link href="detail.css" type="text/css" rel="stylesheet">
+    <!-- link JS files -->
+    <script src="productdetail.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -61,13 +63,25 @@
                 </div>
                 <div class="flavor_options">
                     <label>FLAVOR</label>
-                    <button class="drop-down-options">NONE</button>
+                    <button class="drop-down-options" onclick="show('flavors')" id="flavor-button">NONE</button>
+                      <div class="dropdown-content" id="flavors">
+                          <ul id="sugar-milk" onclick="replace('flavors', 'sugar-milk')">SUGAR-MILK</ul>
+                          <ul id="vanilla-milk" onclick="replace('flavors', 'vanilla-milk')">VANILLA-MILK</ul>
+                          <ul id="chocolate" onclick="replace('flavors', 'chocolate')">CHOCOLATE</ul>
+                      </div>
                 </div>
                 <div class="quantity_options">
                     <label>QUANTITY</label>
-                    <button class="drop-down-options">1</button>
+                    <button class="drop-down-options" onclick="show('quantities')" id="quantity-button">1
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                      <div class="dropdown-content" id="quantities">
+                          <ul id="three" onclick="replace('quantities', 'three')">3</ul>
+                          <ul id="six" onclick="replace('quantities', 'six')">6</ul>
+                          <ul id="twelve" onclick="replace('quantities', 'twelve')">12</ul>
+                      </div>
                 </div>
-                <button class="add_to_cart_button">
+                <button class="add_to_cart_button" onlclick="addToCart()">
                     <img src="images/cart-icon.svg" alt="cart-icon" height="30">
                     ADD TO CART!
                 </button>

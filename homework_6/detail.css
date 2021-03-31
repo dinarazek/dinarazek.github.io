@@ -143,6 +143,26 @@ main {
     width: 150px;
     font-weight: lighter;
     font-family: Nunito, sans-serif;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    margin: 10px;
+    background-color: #C4C4C4;
+    color: grey;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    font-weight: lighter;
+    text-align: center;
+    font-family: Nunito, sans-serif;
+    z-index: 1;
+}
+
+.dropdown-content ul:hover {
+  background-color: dimgrey;
 }
 
 /* formats red x image to be circular and in the right location */
