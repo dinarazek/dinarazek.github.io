@@ -18,12 +18,14 @@
         <nav>
             <!-- navigation bar elements -->
             <ul>
-                <li><a href="base.html"><img id="logo" src="images/logo.png" alt="shop_logo" height="60"></a></li>
+                <li><a href="index.html"><img id="logo" src="images/logo.png" alt="shop_logo" height="60"></a></li>
                 <!-- in reverse order than seen on page due to float right property -->
-                <li class="nav_bar_options"><img src="images/cart-icon.svg" alt="cart_icon" height="26"></li>
+                <a href="shoppingcart.html">
+                    <li class="nav_bar_options"><img src="images/cart-icon.svg" alt="cart_icon" height="26"></li>
+                </a>
                 <li class="nav_bar_options">ABOUT</li>
                 <li class="nav_bar_options" id="selected_page"><a href="productbrowsing.html">SHOP ROLLS</a></li>
-                <li class="nav_bar_options"><a href="base.html">HOME</a></li>
+                <li class="nav_bar_options"><a href="index.html">HOME</a></li>
             </ul>
             <br><br>
         </nav>
@@ -45,11 +47,11 @@
             <main>
                 <!-- utilizes a grid to place elements properly on the page -->
                 <div class="roll_label">BEST SELLER</div>
-                <img class="large_roll_image" src="images/rolls-4.png" alt="pumpkin-roll-image">
+                <img class="large_roll_image" id='id_large_roll' src="images/rolls-4.png" alt="pumpkin-roll-image">
                 <div class="roll_images">
-                    <img class="small_image_edit" src="images/rolls-3.png" alt="pumpkin-roll-image_2" height="100">
-                    <img class="small_image_edit" src="images/rolls-6.jpg" alt="pumpkin-roll-image_3" height="100">
-                    <img class="small_image_edit" src="images/rolls-7.png" alt="pumpkin-roll-image_4" height="100">
+                    <img class="small_image_edit" id='id_small_roll_1' src="images/rolls-3.png" alt="pumpkin-roll-image_2" height="100">
+                    <img class="small_image_edit" id='id_small_roll_2' src="images/rolls-6.jpg" alt="pumpkin-roll-image_3" height="100">
+                    <img class="small_image_edit" id='id_small_roll_3' src="images/rolls-7.png" alt="pumpkin-roll-image_4" height="100">
                 </div>
                 <div class="roll_title">PUMPKIN SPICE</div>
                 <div class="price_title">$6 <span class="price">PER ROLL</span></div>
@@ -63,23 +65,23 @@
                 </div>
                 <div class="flavor_options">
                     <label>FLAVOR</label>
-                    <button class="drop-down-options" onclick="show('flavors')" id="flavor-button">NONE</button>
-                      <div class="dropdown-content" id="flavors">
-                          <ul id="sugar-milk" onclick="replace('flavors', 'sugar-milk')">SUGAR-MILK</ul>
-                          <ul id="vanilla-milk" onclick="replace('flavors', 'vanilla-milk')">VANILLA-MILK</ul>
-                          <ul id="chocolate" onclick="replace('flavors', 'chocolate')">CHOCOLATE</ul>
-                      </div>
+                    <button class="drop-down-button" onclick="show('flavors')" id="flavor-button">NONE</button>
+                    <div class="dropdown-content" id="flavors">
+                        <ul id="none" onclick="replace('flavor-button', 'NONE')">NONE</ul>
+                        <ul id="sugar-milk" onclick="replace('flavor-button', 'SUGAR-MILK')">SUGAR-MILK</ul>
+                        <ul id="vanilla-milk" onclick="replace('flavor-button', 'VANILLA-MILK')">VANILLA-MILK</ul>
+                        <ul id="chocolate" onclick="replace('flavor-button', 'CHOCOLATE')">CHOCOLATE</ul>
+                    </div>
                 </div>
                 <div class="quantity_options">
                     <label>QUANTITY</label>
-                    <button class="drop-down-options" onclick="show('quantities')" id="quantity-button">1
-                        <i class="fa fa-caret-down"></i>
-                    </button>
-                      <div class="dropdown-content" id="quantities">
-                          <ul id="three" onclick="replace('quantities', 'three')">3</ul>
-                          <ul id="six" onclick="replace('quantities', 'six')">6</ul>
-                          <ul id="twelve" onclick="replace('quantities', 'twelve')">12</ul>
-                      </div>
+                    <button class="drop-down-button" onclick="show('quantities')" id="quantity-button">1</button>
+                    <div class="dropdown-content" id="quantities">
+                        <ul id="1" onclick="replace('quantity-button', '1')">1</ul>
+                        <ul id="3" onclick="replace('quantity-button', '3')">3</ul>
+                        <ul id="6" onclick="replace('quantity-button', '6')">6</ul>
+                        <ul id="12" onclick="replace('quantity-button', '12')">12</ul>
+                    </div>
                 </div>
                 <button class="add_to_cart_button" onlclick="addToCart()">
                     <img src="images/cart-icon.svg" alt="cart-icon" height="30">

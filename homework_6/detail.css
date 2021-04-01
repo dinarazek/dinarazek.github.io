@@ -132,8 +132,9 @@ main {
 }
 
 /* formats dropdown menus for flavor and quantity */
-.drop-down-options {
+.drop-down-button {
     display: block;
+    position: relative;
     margin: 10px;
     background-color: #C4C4C4;
     color: grey;
@@ -148,6 +149,10 @@ main {
 }
 
 .dropdown-content {
+    display: none;
+    width: 100%;
+    overflow: auto;
+    position: absolute;
     margin: 10px;
     background-color: #C4C4C4;
     color: grey;
@@ -159,6 +164,9 @@ main {
     text-align: center;
     font-family: Nunito, sans-serif;
     z-index: 1;
+}
+.show {
+    display:block;
 }
 
 .dropdown-content ul:hover {
