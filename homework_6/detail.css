@@ -182,6 +182,9 @@ main {
     margin-bottom: 40px;
 }
 
+.add_to_cart {
+    grid-area: add_to_cart_button; /* assigns grid area to class */
+}
 /* formats add to cart button */
 .add_to_cart_button {
     background-color: #D2ACAC;
@@ -195,6 +198,5 @@ main {
     font-size: 45px;
     float: right;
     margin-right: 10px;
-    grid-area: add_to_cart_button; /* assigns grid area to class */
     align-self: center;
 }

@@ -37,12 +37,43 @@
 
         <main>
             <!-- utilizes a grid to place elements properly on the page -->
-            <label>ROLL</label>
-            <label>QUANTITY</label>
+            <label class="roll_label">ROLL</label>
+            <label class="quantity_label">QUANTITY</label>
+            <!-- horizontal line -->
+            <div class="thick_line">
+                <hr>
+            </div>
+            <!-- pumpkin roll information -->
+            <h5 class="pump_roll">PUMPKIN SPICE</h5>
+            <label id="pump_flavor" class="pump_flavor">SUGAR-MILK FLAVOR</label>
+            <h5 class="pump_quantity">3</h5>
+            <!-- blackberry roll information -->
+            <h5 class="blackberry_roll">THE BLACKBERRY</h5>
+            <label id="blackberry_flavor"class="blackberry_flavor">VANILLA-MILK FLAVOR</label>
+            <h5 class="blackberry_quantity">
+                1
+            </h5>
+            <!-- horizontal line -->
+            <div class="second_thick_line">
+                <hr>
+            </div>
+            <!-- total information -->
+            <label class="total">TOTAL: $24.00</label>
+            <!-- checkout information -->
             <button class="checkout_button" onlclick="addToCart()">
-                <img src="images/cart-icon.svg" alt="icon-with-money-in-hand-representing-payment" height="30">
+                <img src="images/checkout-icon.svg" alt="icon-with-money-in-hand-representing-payment" height="50">
                 CHECKOUT
             </button>
+            <hr class="vertical_line">
+            <!-- continue shopping information -->
+            <a href="productbrowsing.html" class="continue_shopping">
+                <br><br><br><br><br>
+                <h3 class="continue_shopping">HAVEN'T GOTTEN ENOUGH OF OUR ROLLS?</h3>
+                <button id="continue_shopping_button" class="continue_shopping">
+                    <img src="images/roll-icon.svg" alt="page_logo_of_an_outlined_roll" height="50">
+                    CONTINUE SHOPPING ROLLS
+                </button>
+            </a>
         </main>
     </div>
 </body>
