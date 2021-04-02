@@ -9,9 +9,11 @@
     <!-- links CSS files -->
     <link href="style.css" type="text/css" rel="stylesheet">
     <link href="home.css" type="text/css" rel="stylesheet">
+    <!-- link JS files -->
+    <script src="productdetail.js" type="text/javascript"></script>
 </head>
 
-<body>
+<body onload="checkCartStatus()">
     <div class="container">
         <nav>
             <!-- navigation bar elements -->
@@ -20,6 +22,7 @@
                 <!-- in reverse order than seen on page due to float right property -->
                 <a href="shoppingcart.html">
                     <li class="nav_bar_options"><img src="images/cart-icon.svg" alt="cart_icon" height="26"></li>
+                    <div class="nav_bar_options" id="cart_indication">1</div>
                 </a>
                 <li class="nav_bar_options">ABOUT</li>
                 <li class="nav_bar_options"><a href="productbrowsing.html">SHOP ROLLS</a></li>

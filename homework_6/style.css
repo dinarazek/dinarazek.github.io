@@ -86,3 +86,15 @@ hr {
     margin-left: 10px;
     margin-right: 10px;
 }
+
+#cart_indication {
+    display: none;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: #D2ACAC;
+    border: medium solid #A18484;
+    color: white;
+    text-align: center;
+    font: 10px Nunito, sans-serif;
+}
