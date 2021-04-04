@@ -1,3 +1,29 @@
+function Roll(roll, flavor, quantity) {
+    this.roll = roll;
+    this.flavor = flavor;
+    this.quantity = quantity;
+}
+
+function selectedRoll(roll) {
+    console.log('here')
+    var current_roll = new Roll(roll, 'NONE', '1');
+    localStorage.setItem('current_roll', JSON.stringify(current_roll));
+}
+
+function setTitleAndCheckCartStatus() {
+    setRollTitle();
+    checkCartStatus();
+}
+
+function setRollTitle() {
+    let current_roll = JSON.parse(localStorage.getItem('current_roll'));
+    document.getElementById('roll_title').innerHTML = current_roll.roll;
+}
+
+// function unselectedRoll() {
+//     currentRoll.type = 'none';
+// }
+
 // toggles hidden content
 function show(button_id) {
     document.getElementById(button_id).classList.toggle("show");
@@ -9,21 +35,25 @@ function replace(button_id, value) {
     // replaces the value and text in the button to reflect the new choice
     document.getElementById(button_id).value = value;
     document.getElementById(button_id).innerHTML = value;
+    let current_roll = JSON.parse(localStorage.getItem('current_roll'));
 
     // if flavor changes, changes large photo to represent the roll
     if (button_id == 'flavor-button') {
         document.getElementById('id_large_roll').src = "images/" + value.toLowerCase() + "-roll.png";
+        current_roll.flavor = value;
     }
 
     // if quantity changes, changes the title to represent the new number of rolls selected
     if (button_id == 'quantity-button') {
+        current_roll.quantity = value;
         if (value == '1') {
-            document.getElementById('roll_title').innerHTML = "PUMPKIN SPICE";
+            document.getElementById('roll_title').innerHTML = current_roll.roll;
         }
         else {
-            document.getElementById('roll_title').innerHTML = "PUMPKIN SPICE " + value + "-PACK";
+            document.getElementById('roll_title').innerHTML = current_roll.roll + " " + value + "-PACK";
         }
     }
+    localStorage.setItem('current_roll', JSON.stringify(current_roll));
 
 
     // hides dropdown options
@@ -40,27 +70,32 @@ function replace(button_id, value) {
 // used when loading page, checks contents to show cart notification if items are in the cart
 function checkCartStatus() {
     var cart_full = localStorage.getItem('cart');
-    var num_in_cart = localStorage.getItem('num_in_cart');
     if (cart_full == "true") {
+        var current_cart = JSON.parse(localStorage.getItem('current_cart'));
         document.getElementById("cart_indication").style.display = "block";
-        document.getElementById('cart_indication').innerHTML = num_in_cart.toString();
+        document.getElementById('cart_indication').innerHTML = current_cart.length;
     }
+    console.log(JSON.parse(localStorage.getItem('current_cart')));
 }
 
 // sets cart having items to true
 // resets the value to update number in cart with every item added
 function addToCart() {
     var cart_full = localStorage.getItem('cart');
-    var num_in_cart = localStorage.getItem('num_in_cart');
+    var current_roll = JSON.parse(localStorage.getItem('current_roll'));
+    let roll_to_add = new Roll(current_roll.roll, current_roll.flavor, current_roll.quantity);
+    let current_cart;
     if (cart_full == 'true') {
-        var new_num_in_cart = parseInt(num_in_cart) + 1;
-        document.getElementById('cart_indication').innerHTML = new_num_in_cart.toString();
-        localStorage.setItem('num_in_cart', new_num_in_cart.toString());
+        current_cart = JSON.parse(localStorage.getItem('current_cart'));
+        current_cart.push(roll_to_add);
+        document.getElementById('cart_indication').innerHTML = current_cart.length;
+        localStorage.setItem('current_cart', JSON.stringify(current_cart));
     }
     else {
         // case that this is the first item to add to cart
         localStorage.setItem('cart', 'true');
-        localStorage.setItem('num_in_cart', '1');
+        current_cart = [roll_to_add];
+        localStorage.setItem('current_cart', JSON.stringify(current_cart));
     }
 }
 
