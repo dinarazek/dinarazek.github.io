@@ -5,7 +5,6 @@ function Roll(roll, flavor, quantity) {
 }
 
 function selectedRoll(roll) {
-    console.log('here')
     var current_roll = new Roll(roll, 'NONE', '1');
     localStorage.setItem('current_roll', JSON.stringify(current_roll));
 }
@@ -19,10 +18,6 @@ function setRollTitle() {
     let current_roll = JSON.parse(localStorage.getItem('current_roll'));
     document.getElementById('roll_title').innerHTML = current_roll.roll;
 }
-
-// function unselectedRoll() {
-//     currentRoll.type = 'none';
-// }
 
 // toggles hidden content
 function show(button_id) {
@@ -97,6 +92,62 @@ function addToCart() {
         current_cart = [roll_to_add];
         localStorage.setItem('current_cart', JSON.stringify(current_cart));
     }
+}
+
+function removeRoll(cart_index) {
+    console.log(cart_index);
+}
+
+function addCartItemsToPage() {
+    var cart_full = localStorage.getItem('cart');
+    if (cart_full == 'true') {
+        var current_cart = JSON.parse(localStorage.getItem('current_cart'));
+        var place_to_add_roll = document.getElementById("pump_roll");
+        var place_to_add_quantity = document.getElementById("pump_quantity");
+        for (let i = 0; i < current_cart.length; i++) {
+            // add ids to enable removal
+            var roll = document.createElement("h5");
+            var roll_text = document.createTextNode(current_cart[i].roll);
+            roll.appendChild(roll_text);
+            place_to_add_roll.appendChild(roll);
+
+            var flavor = document.createElement("label");
+            var flavor_text;
+            if (current_cart[i].flavor != "NONE") {
+                flavor_text = document.createTextNode(current_cart[i].flavor);
+            }
+            else {
+                flavor_text = document.createTextNode("NO FLAVOR SELECTED");
+            }
+
+            flavor.appendChild(flavor_text);
+            flavor.setAttribute('class', 'flavor');
+            place_to_add_roll.appendChild(flavor);
+
+            var remove_button = document.createElement("button");
+            remove_button.innerHTML = "REMOVE";
+            remove_button.setAttribute('class', 'remove_button');
+            place_to_add_roll.appendChild(remove_button);
+            remove_button.setAttribute('id', current_cart[i].roll + "_" + i.toString());
+            remove_button.setAttribute('onclick', 'removeRoll(' + i.toString() + ')');
+
+            var quantity = document.createElement("h5");
+            var quantity_text = document.createTextNode(current_cart[i].quantity);
+            quantity.appendChild(quantity_text);
+            place_to_add_quantity.appendChild(quantity);
+            place_to_add_quantity.appendChild(document.createElement("br"));
+        }
+        var total = current_cart.length * 6;
+        document.getElementById('total').innerHTML = "TOTAL: $" + total.toString() + ".00";
+    }
+    else {
+        document.getElementById('total').innerHTML = "TOTAL: $0.00";
+    }
+}
+
+function AddItemsToPageAndCheckCartStatus() {
+    checkCartStatus();
+    addCartItemsToPage();
 }
 
 // HW6B preliminary work

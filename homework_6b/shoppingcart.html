@@ -13,7 +13,7 @@
     <script src="productdetail.js" type="text/javascript"></script>
 </head>
 
-<body onload="checkCartStatus()">
+<body onload="AddItemsToPageAndCheckCartStatus()">
     <div class="container">
         <nav>
             <!-- navigation bar elements -->
@@ -47,21 +47,14 @@
                 <hr>
             </div>
             <!-- pumpkin roll information -->
-            <h5 class="pump_roll">PUMPKIN SPICE</h5>
-            <label id="pump_flavor" class="pump_flavor">SUGAR-MILK FLAVOR</label>
-            <h5 class="pump_quantity">3</h5>
-            <!-- blackberry roll information -->
-            <h5 class="blackberry_roll">THE BLACKBERRY</h5>
-            <label id="blackberry_flavor"class="blackberry_flavor">VANILLA-MILK FLAVOR</label>
-            <h5 class="blackberry_quantity">
-                1
-            </h5>
+            <div id="pump_roll" class="pump_roll"></div>
+            <div id="pump_quantity" class="pump_quantity"></div>
             <!-- horizontal line -->
             <div class="second_thick_line">
                 <hr>
             </div>
             <!-- total information -->
-            <label class="total">TOTAL: $24.00</label>
+            <label id="total" class="total"></label>
             <!-- checkout information -->
             <button class="checkout_button" onlclick="addToCart()">
                 <img src="images/checkout-icon.svg" alt="icon-with-money-in-hand-representing-payment" height="50">

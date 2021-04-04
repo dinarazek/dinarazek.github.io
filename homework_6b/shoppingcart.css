@@ -3,13 +3,10 @@ main {
     grid-gap: 6px;
     /* spacing should be the same, so can use repeat function */
     grid-template-columns: 25% 20% 5% 50% ;
-    grid-template-rows: 7% 5% 15% 5% 15% 5% 5% 10% 30%;
+    grid-template-rows: 7% 5% 80% 5% 10% 30%;
     grid-template-areas: "roll_label quantity_label vertical_line continue_shopping"
                          "thick_line thick_line vertical_line continue_shopping"
                          "pump_roll pump_quantity vertical_line continue_shopping"
-                         "pump_flavor none_1 vertical_line continue_shopping"
-                         "blackberry_roll blackberry_quantity vertical_line continue_shopping"
-                         "blackberry_flavor none_2 vertical_line continue_shopping"
                          "second_thick_line second_thick_line vertical_line continue_shopping"
                          "total none_3 vertical_line continue_shopping"
                          "checkout_button checkout_button vertical_line continue_shopping";
@@ -22,7 +19,7 @@ main {
     /*justify-items: left;*/
     align-items: stretch;
     /*align-content: center;*/
-    grid-auto-rows: 1fr;
+    grid-auto-rows: minmax(100px, auto);
     /* automatically populates the page by row */
     grid-auto-flow: row;
     text-align: left;
@@ -104,8 +101,9 @@ hr{
 horizontal {
     margin: 5px;
 }
-#pump_flavor, #blackberry_flavor {
+.flavor {
     margin-left: 20px;
+    margin-right: 10px;
     font-size: 15px;
 }
 
@@ -123,5 +121,19 @@ horizontal {
     font-size: 55px;
     float: left;
     margin: 10px;
+    align-self: center;
+}
+
+.remove_button {
+    background-color: #D2ACAC;
+    border: medium solid #A18484;
+    border-radius: 10px;
+    /*padding: 14px 20px;*/
+    text-align: center;
+    font-style: normal;
+    font-variant: normal;
+    font-size: 12px;
+    /*float: left;*/
+    /*margin: 10px;*/
     align-self: center;
 }
