@@ -70,6 +70,9 @@ function checkCartStatus() {
         document.getElementById("cart_indication").style.display = "block";
         document.getElementById('cart_indication').innerHTML = current_cart.length;
     }
+    else {
+        document.getElementById("cart_indication").style.display = "none";
+    }
     console.log(JSON.parse(localStorage.getItem('current_cart')));
 }
 
@@ -95,7 +98,19 @@ function addToCart() {
 }
 
 function removeRoll(cart_index) {
-    console.log(cart_index);
+    var current_cart = JSON.parse(localStorage.getItem("current_cart"));
+    // delete current_cart[cart_index]; <-- leaves undefined index
+    var new_cart = [];
+    for (let i = 0; i < current_cart.length; i++) {
+        if (i != cart_index) {
+            new_cart.push(current_cart[i]);
+        }
+    }
+    // when cart is emptied, change cart value to reflect empty cart
+    if (new_cart == []) {
+        localStorage.setItem("cart", 'false');
+    }
+    localStorage.setItem("current_cart", JSON.stringify(new_cart));
 }
 
 function addCartItemsToPage() {
